@@ -19,7 +19,7 @@ defmodule ExChan.Repo.Migrations.CreateInitialModels do
 
       timestamps()
     end
-    create unique_index(:boards, [:slug, :name])
+    create unique_index(:boards, :slug)
 
     create table(:boards_settings) do
       add :board_id, references(:boards)
